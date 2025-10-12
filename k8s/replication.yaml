@@ -1,0 +1,40 @@
+# apiVersion: apps/v1
+# kind: ReplicaSet
+# metadata:
+#   name: repication-rs
+#   labels:
+#     data: pod-extra-rs
+# spec:
+#   template:
+#     metadata:
+#       labels:
+#         env: demo
+#       name: nginx-pod-latest
+#     spec:
+#       containers:
+#         - image: nginx:latest
+#           name: nginx-pod
+#   replicas: 2
+#   selector:
+#     matchLabels:
+#       env: demo
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80

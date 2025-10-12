@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: pod-stress
+          image: polinux/stress:latest
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "500m"
+            limits:
+              memory: "300Mi"
+              cpu: "1"
+
+          command: ["stress"]
+          args: ["--vm", "1", "--vm-bytes", "200M", "--vm-hang", "1"]
