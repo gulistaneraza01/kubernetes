@@ -7,3 +7,8 @@ nodes:
         hostPort: 30001
   - role: worker
   - role: worker
+
+
+
+kubeadm join 172.31.35.16:6443 --token cgaswj.rnqi8xwrggi433ks \
+	--discovery-token-ca-cert-hash sha256:058ed1316af5684e3dcf7cee97ddcbbddd887a332a485db4f293a8deeb74831d
