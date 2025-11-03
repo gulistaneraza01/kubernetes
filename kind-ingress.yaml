@@ -9,5 +9,9 @@ nodes:
       - containerPort: 443
         hostPort: 443
         protocol: TCP
+      - containerPort: 31000
+        hostPort: 8000
+      - containerPort: 31001
+        hostPort: 8001
   - role: worker
   - role: worker
