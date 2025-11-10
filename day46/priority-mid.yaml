@@ -1,0 +1,7 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: mid-priority
+value: 500000
+globalDefault: false
+description: "This priority class is used for mid priority pods."
