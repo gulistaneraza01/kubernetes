@@ -56,16 +56,19 @@ k8s-1/
 Choose a configuration based on your needs:
 
 **Basic Cluster:**
+
 ```bash
 kind create cluster --config kind-config.yaml
 ```
 
 **Cluster with Ingress Support:**
+
 ```bash
 kind create cluster --config kind-ingress.yaml
 ```
 
 **Cluster with Calico CNI:**
+
 ```bash
 kind create cluster --config kindCalico.yaml
 # Then install Calico CNI
@@ -73,6 +76,7 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
 
 **Cluster with Cilium CNI:**
+
 ```bash
 kind create cluster --config kindCilium.yaml
 # Then install Cilium CNI
@@ -99,6 +103,7 @@ kubectl apply -f ingress.yaml
 ## Day-by-Day Learning Path
 
 ### Day 14 - Affinity and Anti-Affinity
+
 **Location:** `Day14-affinite/`, `k8s/Day14/`
 
 - Pod affinity and anti-affinity rules
@@ -106,6 +111,7 @@ kubectl apply -f ingress.yaml
 - Examples: `nginx-affinity.yaml`, `nginx-aff-prefer.yaml`
 
 ### Day 16 - Resource Management
+
 **Location:** `day16/`
 
 - Resource requests and limits
@@ -113,6 +119,7 @@ kubectl apply -f ingress.yaml
 - Examples: `resource.yaml`, `matrix-server.yaml`
 
 ### Day 17 - Autoscaling
+
 **Location:** `day17/`
 
 - Horizontal Pod Autoscaler (HPA)
@@ -120,6 +127,7 @@ kubectl apply -f ingress.yaml
 - Examples: `harozontal.yaml`, `vertical.yaml`
 
 ### Day 18 - Health Checks
+
 **Location:** `day18/`
 
 - Liveness probes
@@ -128,6 +136,7 @@ kubectl apply -f ingress.yaml
 - Examples: `livenessHttp.yaml`, `livenessTcp.yaml`, `liveCmd.yaml`
 
 ### Day 19 - ConfigMaps
+
 **Location:** `day19/`
 
 - ConfigMap creation and usage
@@ -135,6 +144,7 @@ kubectl apply -f ingress.yaml
 - Examples: `config.yaml`, `nginx.yaml`
 
 ### Day 21 - Certificates and TLS
+
 **Location:** `day21/`
 
 - Certificate Signing Requests (CSR)
@@ -143,6 +153,7 @@ kubectl apply -f ingress.yaml
 - Examples: `cetificate.yaml`, `csr.yaml`, `issuecert.yaml`
 
 ### Day 22 - RBAC (Role-Based Access Control)
+
 **Location:** `day22/`
 
 - Roles and RoleBindings
@@ -151,6 +162,7 @@ kubectl apply -f ingress.yaml
 - Examples: `role.yaml`, `binding.yaml`, `context.yaml`
 
 ### Day 24 - Cluster Roles
+
 **Location:** `Day24/`
 
 - ClusterRole definitions
@@ -158,6 +170,7 @@ kubectl apply -f ingress.yaml
 - Examples: `clusterrole.yml`, `clusterRoleBinding.yml`
 
 ### Day 25 - Service Accounts
+
 **Location:** `day25/`
 
 - Service account creation
@@ -166,6 +179,7 @@ kubectl apply -f ingress.yaml
 - Examples: `seviceAccount.yaml`, `token.yaml`, `role.yaml`, `rolebinding.yaml`
 
 ### Day 26 - Network Policies
+
 **Location:** `day26/`
 
 - Network policy definitions
@@ -174,6 +188,7 @@ kubectl apply -f ingress.yaml
 - Examples: `networkpolicy.yaml`, `manifest.yaml`
 
 ### Day 29 - Persistent Volumes
+
 **Location:** `Day29/`
 
 - PersistentVolume (PV) and PersistentVolumeClaim (PVC)
@@ -182,11 +197,13 @@ kubectl apply -f ingress.yaml
 - Examples: `pv.yaml`, `pvc.yaml`, `redis.yaml`
 
 ### Day 30
+
 **Location:** `day30/`
 
-*(Content to be added)*
+_(Content to be added)_
 
 ### Day 32 - Multi-Container Pods
+
 **Location:** `day32/`
 
 - Sidecar patterns
@@ -194,6 +211,7 @@ kubectl apply -f ingress.yaml
 - Examples: `nginx1.yaml`, `nginx2.yaml`
 
 ### Day 33 - Ingress
+
 **Location:** `day33/`
 
 - Ingress resources
@@ -203,6 +221,7 @@ kubectl apply -f ingress.yaml
 - Documentation: `detailed-ingress-flow.md`, `ingress-flow-diagram.md`
 
 ### Day 34 - Rolling Updates
+
 **Location:** `day34/`
 
 - Deployment strategies
@@ -211,6 +230,7 @@ kubectl apply -f ingress.yaml
 - Examples: `rollingupdate.yaml`
 
 ### Day 35 - Backup
+
 **Location:** `day35/`
 
 - Backup strategies
@@ -218,11 +238,13 @@ kubectl apply -f ingress.yaml
 - Examples: `backup.yaml`
 
 ### Day 36
+
 **Location:** `day36/`
 
-*(Content to be added)*
+_(Content to be added)_
 
 ### Day 40 - JSON and YAML
+
 **Location:** `day40/`
 
 - JSON to YAML conversion
@@ -230,6 +252,7 @@ kubectl apply -f ingress.yaml
 - Examples: `nginx.json`, `nginx.yaml`, `ip.json`
 
 ### Day 41 - Helm and ArgoCD
+
 **Location:** `day41/`
 
 - Helm chart creation
@@ -238,6 +261,7 @@ kubectl apply -f ingress.yaml
 - Examples: `argo-cd/` (Helm chart), `demo/` (sample chart)
 
 ### Day 42 - Kustomize
+
 **Location:** `day42/`
 
 - Kustomize base and overlays
@@ -245,6 +269,7 @@ kubectl apply -f ingress.yaml
 - Examples: `kustomized/base/`, `kustomized/overlays/dev/`, `kustomized/overlays/test/`
 
 ### Day 45 - Storage Classes
+
 **Location:** `day45/`
 
 - Storage class definitions
@@ -253,6 +278,7 @@ kubectl apply -f ingress.yaml
 - Examples: `storageclass.yaml`, `volume.yaml`, `service.yaml`
 
 ### Day 46 - Gateway API
+
 **Location:** `day46/`
 
 - Gateway API CRDs
@@ -263,40 +289,51 @@ kubectl apply -f ingress.yaml
 ## Kind Cluster Configurations
 
 ### `kind-config.yaml`
+
 Basic Kind cluster with 1 control-plane and 2 worker nodes.
 
 ### `kind-ingress.yaml`
+
 Kind cluster configured with port mappings for ingress:
+
 - Port 80 → 80 (HTTP)
 - Port 443 → 443 (HTTPS)
 - Port 8000 → 31000
 - Port 8001 → 31001
 
 ### `kindCalico.yaml`
+
 Kind cluster configured for Calico CNI:
+
 - Disables default CNI
 - Sets pod subnet to 192.168.0.0/16
 
 ### `kindCilium.yaml`
+
 Kind cluster configured for Cilium CNI:
+
 - Disables default CNI and kube-proxy
 - Sets pod subnet to 10.244.0.0/16
 
 ### `kindCNF.yaml`
+
 Additional CNI configuration file.
 
 ## Example Applications
 
 ### Voting App
+
 **Location:** `example-voting-app/`
 
 A complete distributed application demonstrating:
+
 - Multi-container architecture
 - Service communication
 - Persistent storage
 - Load balancing
 
 **Components:**
+
 - **Vote**: Python web app (port 8080)
 - **Redis**: Message queue
 - **Worker**: .NET worker service
@@ -304,12 +341,14 @@ A complete distributed application demonstrating:
 - **Result**: Node.js results app (port 8081)
 
 **Deploy to Kubernetes:**
+
 ```bash
 cd example-voting-app
 kubectl create -f k8s-specifications/
 ```
 
 **Access:**
+
 - Vote app: `http://localhost:31000`
 - Results app: `http://localhost:31001`
 
@@ -318,10 +357,12 @@ See `example-voting-app/README.md` for detailed instructions.
 ## Documentation
 
 ### Ingress Flow Documentation
+
 - **`detailed-ingress-flow.md`**: Comprehensive explanation of ingress traffic flow
 - **`ingress-flow-diagram.md`**: Visual diagrams of ingress routing
 
 These documents explain:
+
 - How requests flow from browser to pods
 - Ingress controller processing
 - Service resolution and load balancing
@@ -330,6 +371,7 @@ These documents explain:
 ## Tools and Scripts
 
 ### Gateway API Installation
+
 **Location:** `day46/install-gateway-api.sh`
 
 Installs Gateway API CRDs for nginx-gateway-fabric:
@@ -340,6 +382,7 @@ chmod +x day46/install-gateway-api.sh
 ```
 
 Installs:
+
 - GatewayClasses
 - Gateways
 - HTTPRoutes
@@ -350,6 +393,7 @@ Installs:
 **Location:** `k8s/`
 
 Contains fundamental Kubernetes examples:
+
 - Pods (`pod.yaml`)
 - Deployments (`nginx-deploy.yaml`)
 - Services (`service-nginx.yaml`)
@@ -364,6 +408,7 @@ Contains fundamental Kubernetes examples:
 **Location:** `project/`
 
 Contains project-specific resources:
+
 - Authentication secrets
 - TLS certificates
 - Deployments
@@ -374,6 +419,7 @@ Contains project-specific resources:
 ## Common Commands
 
 ### Cluster Management
+
 ```bash
 # Create cluster
 kind create cluster --config kind-config.yaml
@@ -389,6 +435,7 @@ kubectl get all --all-namespaces
 ```
 
 ### Resource Management
+
 ```bash
 # Apply manifest
 kubectl apply -f <file.yaml>
@@ -407,6 +454,7 @@ kubectl logs <pod-name>
 ```
 
 ### Port Forwarding
+
 ```bash
 # Forward port to local machine
 kubectl port-forward <pod-name> <local-port>:<pod-port>
@@ -431,6 +479,7 @@ kubectl port-forward svc/<service-name> <local-port>:<service-port>
 ## Troubleshooting
 
 ### Cluster Issues
+
 ```bash
 # Check node status
 kubectl get nodes
@@ -445,16 +494,19 @@ kubectl get events --sort-by='.lastTimestamp'
 ### Common Problems
 
 **Pods in Pending state:**
+
 - Check node resources: `kubectl describe node`
 - Check resource requests/limits
 - Check node selectors and affinity rules
 
 **Pods in CrashLoopBackOff:**
+
 - Check logs: `kubectl logs <pod-name>`
 - Check previous logs: `kubectl logs <pod-name> --previous`
 - Verify image and configuration
 
 **Service not accessible:**
+
 - Verify service selector matches pod labels
 - Check endpoints: `kubectl get endpoints <service-name>`
 - Verify port mappings
@@ -462,6 +514,7 @@ kubectl get events --sort-by='.lastTimestamp'
 ## Contributing
 
 This is a learning repository. Feel free to:
+
 - Add more examples
 - Improve documentation
 - Fix errors
@@ -476,13 +529,6 @@ This is a learning repository. Feel free to:
 - [Calico Documentation](https://docs.projectcalico.org/)
 - [Cilium Documentation](https://docs.cilium.io/)
 
-## License
-
-This repository is for educational purposes. Check individual example applications for their specific licenses.
-
----
-
 **Happy Learning! 🚀**
 
 For questions or issues, please refer to the Kubernetes documentation or create an issue in this repository.
-
