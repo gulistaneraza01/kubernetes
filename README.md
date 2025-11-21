@@ -528,7 +528,3 @@ This is a learning repository. Feel free to:
 - [Gateway API Documentation](https://gateway-api.sigs.k8s.io/)
 - [Calico Documentation](https://docs.projectcalico.org/)
 - [Cilium Documentation](https://docs.cilium.io/)
-
-**Happy Learning! 🚀**
-
-For questions or issues, please refer to the Kubernetes documentation or create an issue in this repository.
