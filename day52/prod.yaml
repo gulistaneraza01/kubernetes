@@ -1,0 +1,40 @@
+# high-performance-sc-aws.yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: high-performance
+  labels:
+    tier: production
+    performance: high
+provisioner: kubernetes.io/aws-ebs # AWS Elastic Block Store provisioner
+parameters:
+  type: io1 # Provisioned IOPS SSD for high performance
+  iopsPerGB: "50" # Maximum IOPS per GB (adjust as needed)
+  fsType: ext4
+  encrypted: "true"
+  # Availability zone will be picked up based on PVC namespace/selector
+reclaimPolicy: Retain # Keep data after PVC deletion
+allowVolumeExpansion: true # Allow volume expansion
+volumeBindingMode: WaitForFirstConsumer
+
+---
+# gcp
+
+# high-performance-sc.yaml
+# apiVersion: storage.k8s.io/v1
+# kind: StorageClass
+# metadata:
+#   name: high-performance
+#   labels:
+#     tier: production
+#     performance: high
+# provisioner: kubernetes.io/gce-pd # Google Cloud Persistent Disk provisioner
+# parameters:
+#   type: pd-ssd # High-performance SSD
+#   zones: us-central1-a,us-central1-b,us-central1-c
+#   replication-type: regional-pd # Regional replication for HA
+#   fsType: ext4
+# reclaimPolicy: Retain # Keep data after PVC deletion
+# allowVolumeExpansion: true # Allow volume expansion
+# volumeBindingMode: WaitForFirstConsumer
+
