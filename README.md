@@ -16,7 +16,7 @@ A comprehensive Kubernetes learning repository containing hands-on examples, con
 
 ## Overview
 
-This repository contains a structured learning path for Kubernetes, organized by days. Each day focuses on specific Kubernetes concepts with practical examples, YAML manifests, and configurations. The repository includes:
+This repository contains a structured learning path for Kubernetes, organised by days. Each day focuses on specific Kubernetes concepts with practical examples, YAML manifests, and configurations. The repository includes:
 
 - **Day-by-day learning modules** covering core Kubernetes concepts
 - **Kind cluster configurations** for local development
